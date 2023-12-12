@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_home">
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.dennis.newsapp.ui.headlines.HeadlinesFragment"
+        android:label="@string/title_home"
+        tools:layout="@layout/fragment_headlines">
+        <action
+            android:id="@+id/action_headlinesFragment_to_articleDetailFragment"
+            app:destination="@id/articleDetailFragment"/>
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_dashboard"
+        android:name="com.dennis.newsapp.ui.sources.SourcesFragment"
+        android:label="@string/title_dashboard"
+        tools:layout="@layout/fragment_source">
+        <action
+            android:id="@+id/action_sourceFragment_to_articleDetailFragment"
+            app:destination="@id/articleDetailFragment"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_notifications"
+        android:name="com.dennis.newsapp.ui.saved.SavedFragment"
+        android:label="@string/title_notifications"
+        tools:layout="@layout/fragment_saved">
+        <action
+            android:id="@+id/action_savedFragment_to_articleDetailFragment"
+            app:destination="@id/articleDetailFragment"/>
+    </fragment>
+    <fragment
+        android:id="@+id/articleDetailFragment"
+        android:name="com.dennis.newsapp.ui.news_details.ArticleDetailFragment"
+        android:label="ArticleDetailFragment" >
+        <argument
+            android:name="article"
+            app:argType="com.dennis.newsapp.models.Article"/>
+    </fragment>
+</navigation>
