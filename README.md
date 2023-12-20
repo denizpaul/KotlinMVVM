@@ -23,4 +23,8 @@ Welcome to the Demo Android Application built with **Kotlin** and following the 
 
 - **Other libraries used:** Room (for Database), Coroutines, Dependency Injection (Hilt), View Binding, JUnit, Glide, Retrofit
 
+## Screenshots:
 
+![Source Selection](screenshots/source_selection.png)
+![News Feed](screenshots/news_feed.png)
+![Read for Later](screenshots/read_for_later.png)
