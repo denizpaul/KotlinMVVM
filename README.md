@@ -25,6 +25,8 @@ Welcome to the Demo Android Application built with **Kotlin** and following the 
 
 ## Screenshots:
 
-![News Feed](screenshots/news_feed.png)
-![Source Selection](screenshots/source_selection.png)
-![Read for Later](screenshots/read_for_later.png)
+<p align="center">
+  <img src="screenshots/source_selection.png" alt="Source Selection" width="250"/>
+  <img src="screenshots/news_feed.png" alt="News Feed" width="250"/>
+  <img src="screenshots/read_for_later.png" alt="Read for Later" width="250"/>
+</p>
