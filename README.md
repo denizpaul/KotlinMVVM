@@ -25,6 +25,6 @@ Welcome to the Demo Android Application built with **Kotlin** and following the 
 
 ## Screenshots:
 
-![Source Selection](screenshots/source_selection.png)
 ![News Feed](screenshots/news_feed.png)
+![Source Selection](screenshots/source_selection.png)
 ![Read for Later](screenshots/read_for_later.png)
