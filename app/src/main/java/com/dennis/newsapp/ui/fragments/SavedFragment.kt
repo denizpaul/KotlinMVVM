@@ -1,11 +1,9 @@
-package com.dennis.newsapp.ui.saved
+package com.dennis.newsapp.ui.fragments
 
-import android.content.Context
 import android.os.Bundle
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.ItemTouchHelper
@@ -28,6 +26,8 @@ class SavedFragment : Fragment(R.layout.fragment_saved) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding = FragmentSavedBinding.bind(view)
+        (activity as AppCompatActivity).supportActionBar?.title = "Saved News"
+        (activity as AppCompatActivity).supportActionBar?.setDisplayHomeAsUpEnabled(false)
 
         newsViewModel = (activity as NewsActivity).newsViewModel
         setupFavouritesRecycler()
@@ -70,6 +70,7 @@ class SavedFragment : Fragment(R.layout.fragment_saved) {
 
         newsViewModel.getSavedArticles().observe(viewLifecycleOwner, Observer { articles ->
             newsAdapter.differ.submitList(articles)
+            binding.textNoSavedNews.visibility = if (articles.isEmpty()) View.VISIBLE else View.INVISIBLE
         })
     }
 

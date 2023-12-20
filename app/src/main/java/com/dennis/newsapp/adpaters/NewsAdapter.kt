@@ -15,10 +15,10 @@ import com.dennis.newsapp.models.Article
 class NewsAdapter: RecyclerView.Adapter<NewsAdapter.ArticleViewHolder>() {
 
     inner class ArticleViewHolder(itemView: View): RecyclerView.ViewHolder(itemView)
-    lateinit var articleImage: ImageView
-    lateinit var articleTitle: TextView
-    lateinit var articleDescription: TextView
-    lateinit var articlePublishedAt: TextView
+    private lateinit var articleImage: ImageView
+    private lateinit var articleTitle: TextView
+    private lateinit var articleDescription: TextView
+    private lateinit var articlePublishedAt: TextView
     private var onNewsItemClickListener: ((Article) -> Unit)? = null
 
     private val differCallback = object: DiffUtil.ItemCallback<Article>() {

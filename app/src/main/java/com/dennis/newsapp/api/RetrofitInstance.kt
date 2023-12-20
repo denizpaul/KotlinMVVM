@@ -6,6 +6,9 @@ import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
+/**
+ * TODO("Remove this once hilt is introduced")
+ */
 class RetrofitInstance {
     companion object {
         private val retrofit by lazy {

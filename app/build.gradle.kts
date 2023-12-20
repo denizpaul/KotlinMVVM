@@ -3,7 +3,6 @@ plugins {
     id("org.jetbrains.kotlin.android")
     id("kotlin-kapt")
     id("dagger.hilt.android.plugin")
-    id("com.google.devtools.ksp")
     id("androidx.navigation.safeargs.kotlin")
 }
 
@@ -63,16 +62,31 @@ dependencies {
     implementation ("com.squareup.okhttp3:logging-interceptor:4.5.0")
 
     // DI - Hilt
-    implementation("com.google.dagger:hilt-android:2.44")
-    kapt("com.google.dagger:hilt-android-compiler:2.44")
+    implementation("com.google.dagger:hilt-android:2.49")
+    kapt("com.google.dagger:hilt-android-compiler:2.49")
 
     //Room Databse
     implementation ("androidx.room:room-runtime:2.6.1")
-    ksp ("androidx.room:room-compiler:2.6.1")
+    kapt ("androidx.room:room-compiler:2.6.1")
 
     // Kotlin Extensions and Coroutines support for Room
     implementation ("androidx.room:room-ktx:2.6.1")
 
     //Glide image loading
     implementation ("com.github.bumptech.glide:glide:4.16.0")
+
+    //for test
+    testImplementation ("org.mockito:mockito-core:3.+")
+    testImplementation ("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.8.0-RC")
+    testImplementation("io.mockk:mockk:1.13.6")
+    testImplementation ("com.nhaarman.mockitokotlin2:mockito-kotlin:2.2.0")
+    testImplementation ("androidx.arch.core:core-testing:2.1.0@aar")
+    kaptTest("com.google.dagger:hilt-android-compiler:2.44")
+    testAnnotationProcessor("com.google.dagger:hilt-android-compiler:2.44")
+    testAnnotationProcessor("com.google.dagger:hilt-android-compiler:2.44")
+}
+
+// Allow references to generated code
+kapt {
+    correctErrorTypes = true
 }

@@ -12,6 +12,6 @@ class Converters {
 
     @TypeConverter
     fun toSource(name: String): Source {
-        return Source(name, name)
+        return Source(name, name, "", "", "", "", "", false)
     }
 }
